@@ -1,0 +1,66 @@
+# Rename this file as mediainfo-gui.changes to include changelog
+# entries in your RPM file.
+#
+# Add new changelog entries following the format below.
+# Add newest entries to the top of the list.
+# Separate entries from eachother with a blank line.
+
+# * date Author's Name <author's email> version-release
+# - Summary of changes
+
+* Tue Apr 17 2018 Jack Tar <jack.tar@example.com> 0.0.2-5
+- Optimisations for 1080 p. width
+* Wed Sep 13 2017 Jack Tar <jack.tar@example.com> 0.0.2-4
+- Optimisations for 1080 p. width
+* Wed Sep 13 2017 Jack Tar <jack.tar@example.com> 0.0.2-3
+- Small textual changes on mainpage
+* Thu May 11 2017 Jack Tar <jack.tar@example.com> 0.0.2-2
+- Added image and video gallery picker
+* Thu May 11 2017 Jack Tar <jack.tar@example.com> 0.0.2-1
+- Filebrowser in sync with upstream
+* Sun Dec 04 2016 Jack Tar <jack.tar@example.com> 0.0.2-0
+- exiftool no longer optional
+- option to remove GPS info from photo
+- option to remove all EXIF data from photo
+- option to reset file timestamp to photo timestamp
+- Activated delete file option in filebrower
+- Sort now also with directories first
+* Sun Dec 04 2016 Jack Tar <jack.tar@example.com> 0.0.1-17
+- Synced with advanced filebrower from LLs Video Player
+* Sun Nov 13 2016 Jack Tar <jack.tar@example.com> 0.0.1-16
+- Fixed bug when config is not present
+* Sat Nov 5 2016 Jack Tar <jack.tar@example.com> 0.0.1-15
+- Rotate cover on phone
+- Added settingpage to set program for media types
+* Thu Sep 22 2016 Jack Tar <jack.tar@example.com> 0.0.1-14
+- Some redesign of main page
+* Tue ??? 21 2016 Jack Tar <jack.tar@example.com> 0.0.1-13
+- More image format extensions connected to ExifTool
+* Tue Jul 21 2016 Jack Tar <jack.tar@example.com> 0.0.1-12
+- Show image when choosing picture info and other small changes
+* Tue Apr 05 2016 Jack Tar <jack.tar@example.com> 0.0.1-11
+- Now using theme highlight color in text and other small changes
+* Tue Apr 05 2016 Jack Tar <jack.tar@example.com> 0.0.1-10
+- Bigger font for tablet
+* Wed Nov 18 2015 Jack Tar <jack.tar@example.com> 0.0.1-9
+- Small changes for tablet
+* Wed Nov 18 2015 Jack Tar <jack.tar@example.com> 0.0.1-8
+- Added exiftool version in about screen
+- Abandoned rich-text formatting because of poor performance
+- Added landscape support
+* Fri Oct 02 2015 Jack Tar <jack.tar@example.com> 0.0.1-7
+- Changed open button because of SFOS 2.0
+* Thu Sep 03 2015 Jack Tar <jack.tar@example.com> 0.0.1-6
+- small cosmetic changes
+* Mon Mar 21 2015 Jack Tar <jack.tar@example.com> 0.0.1-5
+- if found, exiftool used for images
+* Mon Nov 24 2014 Jack Tar <jack.tar@example.com> 0.0.1-4
+- Updated to llelectronics latest filemanager
+* Mon Nov 17 2014 Jack Tar <jack.tar@example.com> 0.0.1-3
+- restored dependency on mediainfo and added some other dependencies
+* Sun Nov 16 2014 Jack Tar <jack.tar@example.com> 0.0.1-2
+- replaced italic by bold for better readability
+* Sun Nov 16 2014 Jack Tar <jack.tar@example.com> 0.0.1-1
+- added dependency to qt5-qtdeclarative-import-folderlistmodel
+* Sat Nov 15 2014 Jack Tar <jack.tar@example.com> 0.0.1-0
+- Initial release
