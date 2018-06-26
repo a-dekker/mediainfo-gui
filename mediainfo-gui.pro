@@ -34,12 +34,15 @@ icon256.path = /usr/share/icons/hicolor/256x256/apps
 
 INSTALLS += icon86 icon108 icon128 icon256
 
+DEPLOYMENT_PATH = /usr/share/$${TARGET}
+
 OTHER_FILES += qml/mediainfo-gui.qml \
     qml/cover/CoverPage.qml \
     rpm/mediainfo-gui.changes.in \
     rpm/mediainfo-gui.spec \
     rpm/mediainfo-gui.yaml \
     mediainfo-gui.desktop \
+    translations/*.ts \
     qml/pages/About.qml \
     qml/pages/MainPage.qml \
     qml/pages/SettingPage.qml \
@@ -53,6 +56,19 @@ OTHER_FILES += qml/mediainfo-gui.qml \
     qml/pages/fileman/OpenDialog.qml \
     qml/pages/MediaInfo.qml
 
+INSTALLS += translations
+
+TRANSLATIONS = translations/mediainfo-gui-nl.ts
+
+# only include these files for translation:
+lupdate_only {
+    SOURCES = qml/*.qml \
+              qml/pages/*.qml
+}
+
+translations.files = translations
+translations.path = $${DEPLOYMENT_PATH}
+
 # to disable building translations every time, comment out the
 # following CONFIG line
 # CONFIG += sailfishapp_i18n
@@ -65,3 +81,7 @@ HEADERS += \
     src/folderlistmodel/qquickfolderlistmodel.h \
     src/folderlistmodel/fileproperty_p.h \
     src/folderlistmodel/fileinfothread_p.h
+
+# to disable building translations every time, comment out the
+# following CONFIG line
+CONFIG += sailfishapp_i18n

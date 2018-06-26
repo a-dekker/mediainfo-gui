@@ -40,10 +40,10 @@ Page {
                 currentIndex: myset.value("video_tool") === "ExifTool" ? 1 : 0
                 menu: ContextMenu {
                     MenuItem {
-                        text: qsTr("MediaInfo") // 0
+                        text: "MediaInfo" // 0
                     }
                     MenuItem {
-                        text: qsTr("ExifTool") // 1
+                        text: "ExifTool" // 1
                     }
                 }
                 onCurrentItemChanged: {
@@ -67,10 +67,10 @@ Page {
                 currentIndex: myset.value("audio_tool") === "ExifTool" ? 1 : 0
                 menu: ContextMenu {
                     MenuItem {
-                        text: qsTr("MediaInfo") // 0
+                        text: "MediaInfo" // 0
                     }
                     MenuItem {
-                        text: qsTr("ExifTool") // 1
+                        text: "ExifTool" // 1
                     }
                 }
                 onCurrentItemChanged: {

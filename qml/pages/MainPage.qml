@@ -120,7 +120,7 @@ Page {
             x: Theme.paddingLarge
             y: Theme.paddingLarge
             width: isPortrait ? parent.width - Theme.paddingLarge : parent.width / 1.5
-            text: qsTr("Includes limited Exif edit options.\n")
+            text: qsTr("Includes limited Exif edit options.") + "\n"
             font.pixelSize: Theme.fontSizeSmall
             color: Theme.secondaryColor
             wrapMode: Text.Wrap
