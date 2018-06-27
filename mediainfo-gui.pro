@@ -59,6 +59,7 @@ OTHER_FILES += qml/mediainfo-gui.qml \
 INSTALLS += translations
 
 TRANSLATIONS = translations/mediainfo-gui-nl.ts
+TRANSLATIONS = translations/mediainfo-gui-es.ts
 
 # only include these files for translation:
 lupdate_only {
