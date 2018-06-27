@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Jun 27 2018 Jack Tar <jack.tar@example.com> 0.0.2-6
+- Added Spanish and Dutch translation
+- ExifTool will also switch language
 * Tue Apr 17 2018 Jack Tar <jack.tar@example.com> 0.0.2-5
 - Optimisations for 1080 p. width
 * Wed Sep 13 2017 Jack Tar <jack.tar@example.com> 0.0.2-4

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="es" sourcelanguage="en">
 <context>
     <name>About</name>
     <message>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
         <source> and ExifTool </source>
-        <translation>y  ExifTool </translation>
+        <translation> y  ExifTool </translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="73"/>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../qml/pages/fileman/DirList.qml" line="231"/>
         <source>Error pasting file </source>
-        <translation>Error al pegar archivo</translation>
+        <translation>Error al pegar archivo </translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/DirList.qml" line="239"/>
@@ -111,32 +111,32 @@
 <context>
     <name>MediaInfo</name>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="109"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="124"/>
         <source>Phototime to file timestamp</source>
         <translation>Fototiempo para registrar la marca de tiempo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="110"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="125"/>
         <source>Setting timestamp</source>
         <translation>Ajustes de marca de tiempo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="118"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="133"/>
         <source>Remove GPS data</source>
         <translation>Quitar datos GPS</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="122"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="137"/>
         <source>Removing location info</source>
         <translation>Quitando detalles de ubicación</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="130"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="145"/>
         <source>Remove all EXIF metadata</source>
         <translation>Quitar todos los metadatos EXIF</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="131"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="146"/>
         <source>Removing all metadata</source>
         <translation>Quitando todos los metadatos</translation>
     </message>
@@ -152,7 +152,7 @@
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="144"/>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="145"/>
         <source>Deleting </source>
-        <translation>Borrando</translation>
+        <translation>Borrando </translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="263"/>

@@ -14,6 +14,7 @@ Page {
     property string fileType
     property bool hasGPSinfo: false
     property bool hasEXIFinfo: false
+    property string langName: Qt.locale().name
 
     MySettings {
         id: myset
@@ -41,6 +42,20 @@ Page {
     }
 
     function getFileInfo() {
+        var exifVerTXT = "Exif Version:"
+        if (toolCmd === "exiftool") {
+            switch(langName.substring(0, 2)) {
+                case "nl": // dutch
+                toolCmd = toolCmd + " -lang nl "
+                exifVerTXT = "Exif versie"
+                break
+                case "es": //spanish
+                toolCmd = toolCmd + " -lang es "
+                exifVerTXT = "Versión Exif:"
+                break
+            }
+        }
+
         var highLightColor = "white"
         infoText = bar.launch(toolCmd + ' "' + fileName + '"')
         highLightColor = bar.launch(
@@ -68,7 +83,7 @@ Page {
         } else {
             hasGPSinfo = false
         }
-        if (infoText.indexOf("Exif Version:") > 1) {
+        if (infoText.indexOf(exifVerTXT) > 1) {
             hasEXIFinfo = true
         } else {
             hasEXIFinfo = false
