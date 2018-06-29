@@ -31,7 +31,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="63"/>
         <source>Using </source>
-        <translation>Usando </translation>
+        <translation>Usar </translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="65"/>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="14"/>
         <source>Browse</source>
-        <translation>Navegar</translation>
+        <translation>Archivos</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="19"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="110"/>
         <source>Select media file (image/audio/video) to acquire extended tag/metadata provided by MediaInfo or ExifTool.</source>
-        <translation>Elegir el archivo multimedia (imagen/audio/video) para adquirir etiquetas/metadatos extendidos provistos por MediaInfo o ExifTool.</translation>
+        <translation>Elegir el archivo multimedia (foto/audio/video) para adquirir etiquetas/metadatos extendidos provistos por MediaInfo o ExifTool.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="123"/>
@@ -196,7 +196,7 @@
         <location filename="../qml/pages/SettingPage.qml" line="38"/>
         <location filename="../qml/pages/SettingPage.qml" line="65"/>
         <source>Using</source>
-        <translation>Usando</translation>
+        <translation>Usar</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingPage.qml" line="39"/>
