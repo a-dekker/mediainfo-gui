@@ -191,7 +191,7 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
             color: Theme.primaryColor
             font.pixelSize: Theme.fontSizeMedium
-            text: "Homepage <a href=\"http://mediaarea.net/en/MediaInfo\">Mediainfo</a>" + " &amp; " + "<a href=\"http://www.sno.phy.queensu.ca/~phil/exiftool/\">ExifTool</a>"
+            text: qstr("Homepage") + <a href=\"http://mediaarea.net/en/MediaInfo\">Mediainfo</a>" + " &amp; " + "<a href=\"http://www.sno.phy.queensu.ca/~phil/exiftool/\">ExifTool</a>"
             onLinkActivated: Qt.openUrlExternally(link)
             linkColor: Theme.highlightColor
         }
