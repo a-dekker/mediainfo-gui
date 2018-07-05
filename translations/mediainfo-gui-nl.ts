@@ -88,6 +88,10 @@
         <source>Includes limited Exif edit options.</source>
         <translation>Bevat beperkte Exif bewerkings opties.</translation>
     </message>
+    <message>
+        <source>Homepage</source>
+        <translation>Homepagina</translation>
+    </message>
 </context>
 <context>
     <name>MediaInfo</name>

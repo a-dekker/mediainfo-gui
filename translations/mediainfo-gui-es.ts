@@ -107,6 +107,11 @@
         <source>Includes limited Exif edit options.</source>
         <translation>Incluye opciones limitadas de edición Exif.</translation>
     </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="194"/>
+        <source>Homepage</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MediaInfo</name>
