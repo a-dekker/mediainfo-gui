@@ -54,7 +54,10 @@ Page {
                 exifVerTXT = "Versión Exif:"
                 break
             }
+        } else {
+            toolCmd = toolCmd + " --Language=file:///usr/share/mediainfo/Plugins/Language/" + langName.substring(0, 2) + ".csv "
         }
+
 
         var highLightColor = "white"
         infoText = bar.launch(toolCmd + ' "' + fileName + '"')

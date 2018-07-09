@@ -8,6 +8,8 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Jun 27 2018 Jack Tar <jack.tar@example.com> 0.0.2-7
+- Use language files for MediaInfo
 * Wed Jun 27 2018 Jack Tar <jack.tar@example.com> 0.0.2-6
 - Added Spanish and Dutch translation
 - ExifTool will also switch language
