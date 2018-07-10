@@ -100,7 +100,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="110"/>
         <source>Select media file (image/audio/video) to acquire extended tag/metadata provided by MediaInfo or ExifTool.</source>
-        <translation>Elegir el archivo multimedia (foto/audio/video) para adquirir etiquetas/metadatos extendidos provistos por MediaInfo o ExifTool.</translation>
+        <translation>Seleccionar un archivo multimedia (foto/audio/video) para adquirir etiquetas/metadatos extendidos provistos por MediaInfo o ExifTool.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="123"/>
@@ -110,7 +110,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="194"/>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Página digital</translation>
     </message>
 </context>
 <context>
