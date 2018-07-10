@@ -49,9 +49,13 @@ Page {
                 toolCmd = toolCmd + " -lang nl "
                 exifVerTXT = "Exif versie"
                 break
-                case "es": //spanish
+                case "es": // spanish
                 toolCmd = toolCmd + " -lang es "
                 exifVerTXT = "Versión Exif:"
+                break
+                case "ru": // russian
+                toolCmd = toolCmd + " -lang ru "
+                exifVerTXT = "Exif версия:"
                 break
             }
         } else {
