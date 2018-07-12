@@ -21,7 +21,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="51"/>
         <source>-thanks to llelectronics for the file browser-</source>
-        <translation>-спасибо llelectronics за код менеджера файлов-</translation>
+        <translation>Спасибо llelectronics за код менеджера файлов!</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="61"/>
@@ -100,12 +100,13 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="110"/>
         <source>Select media file (image/audio/video) to acquire extended tag/metadata provided by MediaInfo or ExifTool.</source>
-        <translation>Выберите мультимедийный файл (картинку/звук/видео) для получения подробной информации из тэгов/метаданных, получаемых с помощью MediaInfo или ExifTool.</translation>
+        <translation>Выберите мультимедийный файл (картинку, звук или видео) для просмотра подробной информации о нем из тэгов/метаданных с помощью MediaInfo или ExifTool.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="123"/>
         <source>Includes limited Exif edit options.</source>
         <translation>Также поддерживаются некоторые возможности редактирования Exif.</translation>
+        <translation>Возможно ограниченное редактирование Exif.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="194"/>
@@ -118,7 +119,7 @@
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="131"/>
         <source>Phototime to file timestamp</source>
-        <translation>Изменить время файла в соответствии с  временем съемки</translation>
+        <translation>Сменить дату файла на дату съемки</translation>
     </message>
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="132"/>
