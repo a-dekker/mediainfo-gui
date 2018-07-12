@@ -63,7 +63,7 @@ SilicaListView {
 
         entriesList.showAbove(pages);
     }
-    
+
     function goAndroidSd() {
         var url = Qt.resolvedUrl('DirView.qml');
         var pages = [];
@@ -146,23 +146,23 @@ SilicaListView {
 
     PullDownMenu {
         MenuItem {
-            text: isHidden ? "Show Hidden Files" : "Hide Hidden Files"
+            text: isHidden ? qsTr("Show Hidden Files") : qsTr("Hide Hidden Files")
             onClicked: entriesList.showHidden();
         }
         MenuItem {
-            text: "Show Filesystem Root"
+            text: qsTr("Show Filesystem Root")
             onClicked: entriesList.goRoot();
         }
         MenuItem {
-            text: "Show Home"
+            text: qsTr("Show Home")
             onClicked: entriesList.goHome();
         }
         MenuItem {
-            text: "Show Android SDCard"
+            text: qsTr("Show Android SDCard")
             onClicked: entriesList.goAndroidSd();
         }
         MenuItem {
-            text: "Show SDCard"
+            text: qsTr("Show SDCard")
             onClicked: entriesList.goSd();
             visible: _fm.existsPath("/media/sdcard")
             //Component.onCompleted: console.debug("[DirList] SD Card status: " + Util.existsPath("/media/sdcard"))
@@ -188,7 +188,7 @@ SilicaListView {
     }
     PushUpMenu {
         MenuItem {
-            text: "Scroll to top"
+            text: qsTr("Scroll to top")
             onClicked: entriesList.scrollToTop();
         }
     }

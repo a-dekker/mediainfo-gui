@@ -37,10 +37,29 @@
     </message>
 </context>
 <context>
+    <name>DirEntry</name>
+    <message>
+        <source>directory</source>
+        <translation>map</translation>
+    </message>
+</context>
+<context>
     <name>DirEntryMenu</name>
     <message>
         <source>Deleting </source>
         <translation>Verwijderen van </translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation>Knippen</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopiëren</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Verwijderen</translation>
     </message>
 </context>
 <context>
@@ -56,6 +75,34 @@
     <message>
         <source>File operation succeeded</source>
         <translation>Bestands operatie geslaagd</translation>
+    </message>
+    <message>
+        <source>Show Hidden Files</source>
+        <translation>Toon verborgen bestanden</translation>
+    </message>
+    <message>
+        <source>Hide Hidden Files</source>
+        <translation>Verberg verborgen bestanden</translation>
+    </message>
+    <message>
+        <source>Show Filesystem Root</source>
+        <translation>Toon Root bestandssysteem</translation>
+    </message>
+    <message>
+        <source>Show Home</source>
+        <translation>Toon Home</translation>
+    </message>
+    <message>
+        <source>Show Android SDCard</source>
+        <translation>Toon Android SD-kaart</translation>
+    </message>
+    <message>
+        <source>Show SDCard</source>
+        <translation>Toon SD-kaart</translation>
+    </message>
+    <message>
+        <source>Scroll to top</source>
+        <translation>Beweeg naar boven</translation>
     </message>
 </context>
 <context>
@@ -149,6 +196,30 @@
     <message>
         <source>File operation succeeded</source>
         <translation>Bestands operatie geslaagd</translation>
+    </message>
+    <message>
+        <source>Show Filesystem Root</source>
+        <translation>Toon Root bestandssysteem</translation>
+    </message>
+    <message>
+        <source>Show Home</source>
+        <translation>Toon Home</translation>
+    </message>
+    <message>
+        <source>Show Android SDCard</source>
+        <translation>Toon Android SD-kaart</translation>
+    </message>
+    <message>
+        <source>Show SDCard</source>
+        <translation>Toon SD-kaart</translation>
+    </message>
+    <message>
+        <source>Scroll to top</source>
+        <translation>Beweeg naar boven</translation>
+    </message>
+    <message>
+        <source>directory</source>
+        <translation>map</translation>
     </message>
 </context>
 <context>

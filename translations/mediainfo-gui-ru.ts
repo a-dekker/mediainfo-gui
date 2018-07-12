@@ -45,19 +45,77 @@
     </message>
 </context>
 <context>
+    <name>DirEntry</name>
+    <message>
+        <location filename="../qml/pages/fileman/DirEntry.qml" line="142"/>
+        <source>directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DirEntryMenu</name>
     <message>
         <location filename="../qml/pages/fileman/DirEntryMenu.qml" line="32"/>
         <source>Deleting </source>
         <translation>Удаление </translation>
     </message>
+    <message>
+        <location filename="../qml/pages/fileman/DirEntryMenu.qml" line="45"/>
+        <source>Cut</source>
+        <translation type="unfinished">Вырезать</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/DirEntryMenu.qml" line="50"/>
+        <source>Copy</source>
+        <translation type="unfinished">Копировать</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/DirEntryMenu.qml" line="55"/>
+        <source>Delete</source>
+        <translation type="unfinished">Удалить</translation>
+    </message>
 </context>
 <context>
     <name>DirList</name>
     <message>
+        <location filename="../qml/pages/fileman/DirList.qml" line="149"/>
+        <source>Show Hidden Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/DirList.qml" line="149"/>
+        <source>Hide Hidden Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/DirList.qml" line="153"/>
+        <source>Show Filesystem Root</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/DirList.qml" line="157"/>
+        <source>Show Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/DirList.qml" line="161"/>
+        <source>Show Android SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/DirList.qml" line="165"/>
+        <source>Show SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/fileman/DirList.qml" line="175"/>
         <source>Paste</source>
         <translation>Вставить</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/DirList.qml" line="191"/>
+        <source>Scroll to top</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/DirList.qml" line="231"/>
@@ -105,7 +163,6 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="123"/>
         <source>Includes limited Exif edit options.</source>
-        <translation>Также поддерживаются некоторые возможности редактирования Exif.</translation>
         <translation>Возможно ограниченное редактирование Exif.</translation>
     </message>
     <message>
@@ -150,38 +207,68 @@
 <context>
     <name>OpenDialog</name>
     <message>
-        <location filename="../qml/pages/fileman/OpenDialog.qml" line="113"/>
+        <location filename="../qml/pages/fileman/OpenDialog.qml" line="92"/>
+        <source>Show Filesystem Root</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/OpenDialog.qml" line="96"/>
+        <source>Show Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/OpenDialog.qml" line="100"/>
+        <source>Show Android SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/OpenDialog.qml" line="104"/>
+        <source>Show SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/OpenDialog.qml" line="112"/>
         <source>Paste</source>
         <translation>Вставить</translation>
     </message>
     <message>
+        <location filename="../qml/pages/fileman/OpenDialog.qml" line="129"/>
+        <source>Scroll to top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/OpenDialog.qml" line="143"/>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="144"/>
-        <location filename="../qml/pages/fileman/OpenDialog.qml" line="145"/>
         <source>Deleting </source>
         <translation>Удаление </translation>
     </message>
     <message>
-        <location filename="../qml/pages/fileman/OpenDialog.qml" line="263"/>
+        <location filename="../qml/pages/fileman/OpenDialog.qml" line="212"/>
+        <source>directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/fileman/OpenDialog.qml" line="262"/>
         <source>Cut</source>
         <translation>Вырезать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/fileman/OpenDialog.qml" line="269"/>
+        <location filename="../qml/pages/fileman/OpenDialog.qml" line="268"/>
         <source>Copy</source>
         <translation>Копировать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/fileman/OpenDialog.qml" line="275"/>
+        <location filename="../qml/pages/fileman/OpenDialog.qml" line="274"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/fileman/OpenDialog.qml" line="296"/>
+        <location filename="../qml/pages/fileman/OpenDialog.qml" line="295"/>
         <source>Error pasting file </source>
         <translation>Ошибка копирования файла </translation>
     </message>
     <message>
-        <location filename="../qml/pages/fileman/OpenDialog.qml" line="304"/>
+        <location filename="../qml/pages/fileman/OpenDialog.qml" line="303"/>
         <source>File operation succeeded</source>
         <translation>Действие с файлом завершено</translation>
     </message>

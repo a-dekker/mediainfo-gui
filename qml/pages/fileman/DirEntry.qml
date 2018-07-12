@@ -18,7 +18,7 @@ ListItem {
         else "f"
     }
     //property string fileName: fileName
-    showMenuOnPressAndHold: false
+    openMenuOnPressAndHold: false
     signal mediaFileOpen(string url)
     signal fileRemove(string url)
     signal dirRemove(string url)
@@ -30,19 +30,19 @@ ListItem {
     }
 
     function removeFile(url,pos) {
-        //console.debug("[DirEntry] Request removal of: " + url);
+        //console.debug("[DirEntry] Request removal of: " + url)
         if (fileIsDir) dirRemove(url)
         else fileRemove(url)
         //entries.remove(pos)
     }
 
     function openFile() {
-        var url = "file://" + filePath;
-        //console.log("Open clicked");
-        mediaFileOpen(url);
+        var url = "file://" + filePath
+        //console.log("Open clicked")
+        mediaFileOpen(url)
         //pageStack.push(dataContainer)
 
-        //Qt.openUrlExternally(url);
+        //Qt.openUrlExternally(url)
     }
 
     Component {
@@ -56,22 +56,22 @@ ListItem {
     }
 
     function showContextMenu() {
-        //var filePath = getFullName(fileName);
+        //var filePath = getFullName(fileName)
 //        if (!Util.isSpecialPath(filePath))
-            showMenu({fileName: fileName
+            openMenu({fileName: fileName
                       , fileType: fileType
-                      , filePath: filePath});
+                      , filePath: filePath})
     }
 
     onClicked : {
         if (fileIsDir) {
             if (fileName !== '.' && fileName !== '..') {  // Very unlikely as we don't show dot or dotdot
-                var url = Qt.resolvedUrl('DirView.qml');
-                myList.showAbove(url, {root: filePath, dataContainer: dataContainer });
+                var url = Qt.resolvedUrl('DirView.qml')
+                myList.showAbove(url, {root: filePath, dataContainer: dataContainer })
             }
         } else {
             pageStack.push(Qt.resolvedUrl("../MediaInfo.qml"), { fileName: filePath } )
-            // openFile();
+            // openFile()
         }
     }
     onPressAndHold: showContextMenu()
@@ -100,8 +100,8 @@ ListItem {
                     , r : "image://theme/icon-m-file-rpm"
                     , d : "image://theme/icon-m-folder"
                     , s : "image://theme/icon-m-link"
-                };
-                return sources[fileType] || "image://theme/icon-m-other";
+                }
+                return sources[fileType] || "image://theme/icon-m-other"
             }
             source: getSource()
             anchors {
@@ -139,28 +139,28 @@ ListItem {
                 function infoString() {
                     switch(fileType) {
                     case 'd':
-                        return 'directory';
+                        return qsTr('directory')
                     case 's': {
-                        var fullName = myList.getFullName(fileName);
-                        var fi = Util.fileInfo(fullName);
-                        return '-> ' + fi.symLinkTarget();
+                        var fullName = myList.getFullName(fileName)
+                        var fi = Util.fileInfo(fullName)
+                        return '-> ' + fi.symLinkTarget()
                     }
                     default:
-                        return fileSizeString();
+                        return fileSizeString()
                     }
                 }
 
                 function fileSizeString() {
-                    var suffices = ['b', 'K', 'M', 'G', 'T'];
-                    var s = fileSize;
-                    var i = 0;
+                    var suffices = ['b', 'K', 'M', 'G', 'T']
+                    var s = fileSize
+                    var i = 0
                     while (s > 1024) {
-                        s /= 1024;
-                        ++i;
+                        s /= 1024
+                        ++i
                     }
                     return (i < suffices.length)
                         ? String(s.toFixed(i < 2 ? 0 : 1)) + suffices[i]
-                    : "?";
+                    : "?"
                 }
 
             }

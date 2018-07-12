@@ -30,11 +30,6 @@ SilicaListView {
                     verticalCenter: parent.verticalCenter
                 }
             }
-            // Label {
-            //     text: '/'
-            //     font.pixelSize: Theme.fontSizeMedium
-            //     width: paintedWidth + Theme.paddingLarge
-            // }
         }
         onClicked: {
             //console.log("Click on ", name, index);

@@ -42,17 +42,17 @@ ContextMenu {
     }
 
     MenuItem {
-        text: "Cut"
+        text: qsTr("Cut")
         onClicked: entryMenu.move()
     }
 
     MenuItem {
-        text: "Copy"
+        text: qsTr("Copy")
         onClicked: entryMenu.copy()
     }
 
     MenuItem {
-        text: "Delete"
+        text: qsTr("Delete")
         onClicked: entryMenu.deleteFile()
     }
 }

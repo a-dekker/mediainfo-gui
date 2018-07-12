@@ -14,7 +14,7 @@ Name:       mediainfo-gui
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Graphical interface for MediaInfo and ExifTool
 Version:    0.2
-Release:    8
+Release:    9
 Group:      Qt/Qt
 License:    LICENSE
 URL:        https://openrepos.net/content/ade/mediainfo-gui
