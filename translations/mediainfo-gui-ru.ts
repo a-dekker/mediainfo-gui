@@ -49,7 +49,7 @@
     <message>
         <location filename="../qml/pages/fileman/DirEntry.qml" line="142"/>
         <source>directory</source>
-        <translation type="unfinished"></translation>
+        <translation>каталог</translation>
     </message>
 </context>
 <context>
@@ -62,17 +62,17 @@
     <message>
         <location filename="../qml/pages/fileman/DirEntryMenu.qml" line="45"/>
         <source>Cut</source>
-        <translation type="unfinished">Вырезать</translation>
+        <translation>Вырезать</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/DirEntryMenu.qml" line="50"/>
         <source>Copy</source>
-        <translation type="unfinished">Копировать</translation>
+        <translation>Копировать</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/DirEntryMenu.qml" line="55"/>
         <source>Delete</source>
-        <translation type="unfinished">Удалить</translation>
+        <translation>Удалить</translation>
     </message>
 </context>
 <context>
@@ -80,32 +80,32 @@
     <message>
         <location filename="../qml/pages/fileman/DirList.qml" line="149"/>
         <source>Show Hidden Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Показывать скрытые файлы</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/DirList.qml" line="149"/>
         <source>Hide Hidden Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Спрятать скрытые файлы</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/DirList.qml" line="153"/>
         <source>Show Filesystem Root</source>
-        <translation type="unfinished"></translation>
+        <translation>Корневой каталог</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/DirList.qml" line="157"/>
         <source>Show Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Домашний каталог</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/DirList.qml" line="161"/>
         <source>Show Android SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>SD-карта для Андроид</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/DirList.qml" line="165"/>
         <source>Show SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>SD-карта</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/DirList.qml" line="175"/>
@@ -115,7 +115,7 @@
     <message>
         <location filename="../qml/pages/fileman/DirList.qml" line="191"/>
         <source>Scroll to top</source>
-        <translation type="unfinished"></translation>
+        <translation>К началу</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/DirList.qml" line="231"/>
@@ -209,22 +209,22 @@
     <message>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="92"/>
         <source>Show Filesystem Root</source>
-        <translation type="unfinished"></translation>
+        <translation>Корневой каталог</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="96"/>
         <source>Show Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Домашний каталог</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="100"/>
         <source>Show Android SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>SD-карта для Андроид</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="104"/>
         <source>Show SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>SD-карта</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="112"/>
@@ -234,7 +234,7 @@
     <message>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="129"/>
         <source>Scroll to top</source>
-        <translation type="unfinished"></translation>
+        <translation>К началу</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="143"/>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="212"/>
         <source>directory</source>
-        <translation type="unfinished"></translation>
+        <translation>каталог</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="262"/>
