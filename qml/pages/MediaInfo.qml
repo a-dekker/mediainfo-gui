@@ -53,6 +53,10 @@ Page {
                 toolCmd = toolCmd + " -lang es "
                 exifVerTXT = "Versión Exif:"
                 break
+                case "sv": // swedish
+                toolCmd = toolCmd + " -lang sv "
+                exifVerTXT = "Exif-version:"
+                break
                 case "ru": // russian
                 toolCmd = toolCmd + " -lang ru "
                 exifVerTXT = "Exif версия:"

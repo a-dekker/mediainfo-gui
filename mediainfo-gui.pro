@@ -60,6 +60,7 @@ INSTALLS += translations
 
 TRANSLATIONS = translations/mediainfo-gui-nl.ts \
                translations/mediainfo-gui-es.ts \
+               translations/mediainfo-gui-sv.ts \
                translations/mediainfo-gui-ru.ts
 
 # only include these files for translation:

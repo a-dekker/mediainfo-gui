@@ -174,32 +174,32 @@
 <context>
     <name>MediaInfo</name>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="131"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="135"/>
         <source>Phototime to file timestamp</source>
         <translation>Fototiempo para registrar la marca de tiempo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="132"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="136"/>
         <source>Setting timestamp</source>
         <translation>Ajustes de marca de tiempo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="140"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="144"/>
         <source>Remove GPS data</source>
         <translation>Quitar datos GPS</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="144"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="148"/>
         <source>Removing location info</source>
         <translation>Quitando detalles de ubicación</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="152"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="156"/>
         <source>Remove all EXIF metadata</source>
         <translation>Quitar todos los metadatos EXIF</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="153"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="157"/>
         <source>Removing all metadata</source>
         <translation>Quitando todos los metadatos</translation>
     </message>
