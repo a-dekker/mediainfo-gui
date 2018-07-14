@@ -214,7 +214,7 @@
     <message>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="96"/>
         <source>Show Home</source>
-        <translation>Inicio</translation>
+        <translation>Directorio principal</translation>
     </message>
     <message>
         <location filename="../qml/pages/fileman/OpenDialog.qml" line="100"/>
