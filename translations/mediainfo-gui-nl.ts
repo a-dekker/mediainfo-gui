@@ -144,27 +144,27 @@
     <name>MediaInfo</name>
     <message>
         <source>Phototime to file timestamp</source>
-        <translation>Foto datum naar tijdstempel</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Setting timestamp</source>
-        <translation>Tijdstempel zetten</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remove GPS data</source>
-        <translation>Verwijder GPS gegevens</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Removing location info</source>
-        <translation>Verwijder locatie informatie</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remove all EXIF metadata</source>
-        <translation>Verwijder alle EXIF metadata</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Removing all metadata</source>
-        <translation>Verwijder alle metadata</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

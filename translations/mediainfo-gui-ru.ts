@@ -174,34 +174,34 @@
 <context>
     <name>MediaInfo</name>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="135"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="129"/>
         <source>Phototime to file timestamp</source>
-        <translation>Сменить дату файла на дату съемки</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="136"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="130"/>
         <source>Setting timestamp</source>
-        <translation>Изменение метки времени</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="144"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="138"/>
         <source>Remove GPS data</source>
-        <translation>Удалить GPS-координаты</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="148"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="142"/>
         <source>Removing location info</source>
-        <translation>Удаление координат съемки</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="156"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="150"/>
         <source>Remove all EXIF metadata</source>
-        <translation>Удалить все метаданные EXIF</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="157"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="151"/>
         <source>Removing all metadata</source>
-        <translation>Удаление всех метаданных</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

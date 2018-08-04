@@ -10,7 +10,6 @@ Page {
     property bool largeScreen: screen.width >= 1080
     property string fileName
     property string toolCmd: "mediainfo"
-    property string infoText
     property string fileType
     property bool hasGPSinfo: false
     property bool hasEXIFinfo: false
@@ -66,29 +65,18 @@ Page {
             toolCmd = toolCmd + " --Language=file:///usr/share/mediainfo/Plugins/Language/" + langName.substring(0, 2) + ".csv "
         }
 
-
-        var highLightColor = "white"
-        infoText = bar.launch(toolCmd + ' "' + fileName + '"')
-        highLightColor = bar.launch(
-                    "dconf read /desktop/jolla/theme/color/highlight").replace(
-                    /'/g, "").replace(/(\r\n|\n|\r)/gm, "")
-        infoText = infoText.replace(/($)/gm, "</font>")
-        infoText = infoText.replace("</font></font>", "</font>")
-        infoText = infoText.replace(/ *: /gm,
-                                    ": <font color=\"" + highLightColor + "\">")
-        infoText = infoText.replace(/\n/gm, "<br>")
-        // for mediainfo only
-        infoText = infoText.replace("General</font><br>", "<h2>General</h2>")
-        infoText = infoText.replace(
-                    "</font><br></font><br>Video</font></font><br>",
-                    "<br><h2>Video</h2>")
-        infoText = infoText.replace(
-                    "</font><br></font><br>Audio</font></font><br>",
-                    "<br><h2>Audio</h2>")
-        infoText = infoText.replace(
-                    "</font><br></font><br>Image</font></font><br>",
-                    "<br><h2>Image</h2>")
-        // console.log(infoText)
+        var infoText = bar.launch(toolCmd + ' "' + fileName + '"')
+        infoText = infoText.split('\n')
+        for (var i = 0; i < infoText.length; i++) {
+            if (infoText[i].indexOf(": ") > 1) {
+                var mediaKey = infoText[i].split(': ')[0].replace(/^\s*/, '').replace(/\s*$/, '')
+                var mediaValue = infoText[i].split(': ')[1].replace(/^\s*/, '').replace(/\s*$/, '')
+                appendList(mediaKey, mediaValue)
+            } else {
+                // no key : value
+                appendList(infoText[i].replace(/^\s*/, '').replace(/\s*$/, ''), "")
+            }
+        }
         if (infoText.indexOf("GPS ") > 1) {
             hasGPSinfo = true
         } else {
@@ -99,6 +87,13 @@ Page {
         } else {
             hasEXIFinfo = false
         }
+    }
+
+    function appendList(mediaKey, mediaValue) {
+        listMediaModel.append({
+                                 mediaKey:   mediaKey,
+                                 mediaValue: mediaValue
+                             })
     }
 
     Component.onCompleted: {
@@ -128,7 +123,6 @@ Page {
         contentWidth: parent.width
         contentHeight: col.height
 
-        // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
             visible: hasEXIFinfo
             MenuItem {
@@ -168,8 +162,8 @@ Page {
 
         Column {
             id: col
-            spacing: Theme.paddingLarge
-            width: parent.width
+            spacing: 0
+            width: parent.width - 2 * Theme.paddingSmall
             PageHeader {
                 title: fileName
             }
@@ -180,14 +174,31 @@ Page {
                 width: parent.width - (2 * Theme.paddingLarge)
                 visible: fileType === "image"
             }
-            Label {
-                width: parent.width - 40
-                x: Theme.paddingLarge
-                y: Theme.paddingLarge
-                text: infoText
-                textFormat: Text.StyledText
-                font.pixelSize: largeScreen ? Theme.fontSizeSmall : Theme.fontSizeExtraSmall
-                wrapMode: Text.Wrap
+            Repeater {
+                model: ListModel {
+                    id: listMediaModel
+                }
+
+                Row {
+                    width: parent.width
+                    spacing: Theme.paddingSmall
+
+                    Label {
+                        width: parent.width * 0.5
+                        text: mediaKey
+                        horizontalAlignment: Text.AlignRight
+                        color: Theme.primaryColor
+                        font.pixelSize: largeScreen ? Theme.fontSizeSmall : Theme.fontSizeExtraSmall
+                        wrapMode: Text.Wrap
+                    }
+                    Label {
+                        width: parent.width * 0.5
+                        text: mediaValue
+                        color: Theme.highlightColor
+                        font.pixelSize: largeScreen ? Theme.fontSizeSmall : Theme.fontSizeExtraSmall
+                        wrapMode: Text.Wrap
+                    }
+                }
             }
         }
     }

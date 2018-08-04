@@ -174,34 +174,34 @@
 <context>
     <name>MediaInfo</name>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="135"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="129"/>
         <source>Phototime to file timestamp</source>
-        <translation>Fototid till filstämpel</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="136"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="130"/>
         <source>Setting timestamp</source>
-        <translation>Anger tidsstämpel</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="144"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="138"/>
         <source>Remove GPS data</source>
-        <translation>Ta bort GPS-data</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="148"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="142"/>
         <source>Removing location info</source>
-        <translation>Tar bort platsinformation</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="156"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="150"/>
         <source>Remove all EXIF metadata</source>
-        <translation>Ta bort all Exif-metadata</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MediaInfo.qml" line="157"/>
+        <location filename="../qml/pages/MediaInfo.qml" line="151"/>
         <source>Removing all metadata</source>
-        <translation>Tar bort all metadata</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
