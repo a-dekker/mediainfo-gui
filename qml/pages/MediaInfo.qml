@@ -41,7 +41,7 @@ Page {
     }
 
     function getFileInfo() {
-        var exifVerTXT = "Exif Version:"
+        var exifVerTXT = "Exif Version"
         if (toolCmd === "exiftool") {
             switch(langName.substring(0, 2)) {
                 case "nl": // dutch
@@ -50,42 +50,40 @@ Page {
                 break
                 case "es": // spanish
                 toolCmd = toolCmd + " -lang es "
-                exifVerTXT = "Versión Exif:"
+                exifVerTXT = "Versión Exif"
                 break
                 case "sv": // swedish
                 toolCmd = toolCmd + " -lang sv "
-                exifVerTXT = "Exif-version:"
+                exifVerTXT = "Exif-version"
                 break
                 case "ru": // russian
                 toolCmd = toolCmd + " -lang ru "
-                exifVerTXT = "Exif версия:"
+                exifVerTXT = "Exif версия"
                 break
             }
         } else {
             toolCmd = toolCmd + " --Language=file:///usr/share/mediainfo/Plugins/Language/" + langName.substring(0, 2) + ".csv "
         }
 
+        hasGPSinfo = false
+        hasEXIFinfo = false
         var infoText = bar.launch(toolCmd + ' "' + fileName + '"')
         infoText = infoText.split('\n')
         for (var i = 0; i < infoText.length; i++) {
             if (infoText[i].indexOf(": ") > 1) {
                 var mediaKey = infoText[i].split(': ')[0].replace(/^\s*/, '').replace(/\s*$/, '')
                 var mediaValue = infoText[i].split(': ')[1].replace(/^\s*/, '').replace(/\s*$/, '')
+                if (mediaKey.indexOf("GPS ") === 0) {
+                    hasGPSinfo = true
+                }
+                if (mediaKey.indexOf(exifVerTXT) === 0) {
+                    hasEXIFinfo = true
+                }
                 appendList(mediaKey, mediaValue)
             } else {
                 // no key : value
                 appendList(infoText[i].replace(/^\s*/, '').replace(/\s*$/, ''), "")
             }
-        }
-        if (infoText.indexOf("GPS ") > 1) {
-            hasGPSinfo = true
-        } else {
-            hasGPSinfo = false
-        }
-        if (infoText.indexOf(exifVerTXT) > 1) {
-            hasEXIFinfo = true
-        } else {
-            hasEXIFinfo = false
         }
     }
 
