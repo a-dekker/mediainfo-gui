@@ -28,15 +28,22 @@ Page {
     }
 
     function findFileType(fileExt) {
-        var picExts = ["JPG", "JPEG", "GIF", "PNG", "TIF", "TIFF", "BMP", "JP2", "PGF", "HDP", "PSP", "XCF", "RAW", "DNG", "BGP", "XMP", "JFIF", "ARW", "BPG", "CR2", "CRW", "DPX", "SVG"]
+        var picExts = ["JPG", "JPEG", "GIF", "PNG", "TIF", "TIFF", "BMP", "JP2", "PGF", "HDP", "PSP", "XCF", "RAW",
+        "DNG", "BGP", "XMP", "JFIF", "ARW", "BPG", "CR2", "CRW", "DPX", "SVG"]
         var audioExts = ["WAV", "MP3", "AU", "PCM", "APE", "AAC", "WMA", "AA", "AAC", "FLAC", "OGG", "OGA", "WV"]
+        var videoExts = [ "WEBM", "MKV", "FLV", "VOB", "OGV", "DRC", "GIF", "GIFV", "MNG", "AVI", "MOV", "QT",
+        "WMV", "YUV", "RM", "RMVB", "ASF", "AMV", "MP4", "M4P", "M4V", "MPG", "MP2", "MPEG", "MPE", "MPV",
+        "MPG", "MPEG", "M2V", "M4V", "SVI", "3GP", "3G2", "MXF", "ROQ", "NSV", "FLV", "F4V", "F4P", "F4A", "F4B"]
+
         if (picExts.indexOf(fileExt) > -1) {
             fileType = "image"
             toolCmd = "exiftool"
         } else if (audioExts.indexOf(fileExt) > -1) {
             fileType = "audio"
-        } else {
+        } else if (videoExts.indexOf(fileExt) > -1) {
             fileType = "video"
+        } else {
+            toolCmd = "exiftool"
         }
     }
 
