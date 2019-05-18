@@ -176,32 +176,32 @@
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="134"/>
         <source>Phototime to file timestamp</source>
-        <translation type="unfinished"></translation>
+        <translation>Копировать время съёмки в метку времени файла</translation>
     </message>
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="135"/>
         <source>Setting timestamp</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменение метки времени</translation>
     </message>
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="143"/>
         <source>Remove GPS data</source>
-        <translation type="unfinished"></translation>
+        <translation>Стереть данные GPS</translation>
     </message>
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="147"/>
         <source>Removing location info</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаление координат места съёмки</translation>
     </message>
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="155"/>
         <source>Remove all EXIF metadata</source>
-        <translation type="unfinished"></translation>
+        <translation>Стереть все метаданные EXIF</translation>
     </message>
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="156"/>
         <source>Removing all metadata</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаление всех метаданных</translation>
     </message>
 </context>
 <context>
