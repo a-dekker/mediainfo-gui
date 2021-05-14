@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.5
 import Sailfish.Silica 1.0
 
 ListItem {
@@ -7,15 +7,24 @@ ListItem {
     menu: myMenu
     property Item myList
     property string fileType: {
-        if (fileIsDir) "d"
-        else if (_fm.getMime(filePath).indexOf("video") !== -1) "v"
-        else if (_fm.getMime(filePath).indexOf("audio") !== -1) "a"
-        else if (_fm.getMime(filePath).indexOf("image") !== -1) "i"
-        else if (_fm.getMime(filePath).indexOf("text") !== -1) "t"
-        else if (_fm.getMime(filePath).indexOf("pdf") !== -1) "p"
-        else if (_fm.getMime(filePath).indexOf("android") !== -1) "apk"
-        else if (_fm.getMime(filePath).indexOf("rpm") !== -1) "r"
-        else "f"
+        if (fileIsDir)
+            "d"
+        else if (_fm.getMime(filePath).indexOf("video") !== -1)
+            "v"
+        else if (_fm.getMime(filePath).indexOf("audio") !== -1)
+            "a"
+        else if (_fm.getMime(filePath).indexOf("image") !== -1)
+            "i"
+        else if (_fm.getMime(filePath).indexOf("text") !== -1)
+            "t"
+        else if (_fm.getMime(filePath).indexOf("pdf") !== -1)
+            "p"
+        else if (_fm.getMime(filePath).indexOf("android") !== -1)
+            "apk"
+        else if (_fm.getMime(filePath).indexOf("rpm") !== -1)
+            "r"
+        else
+            "f"
     }
     //property string fileName: fileName
     openMenuOnPressAndHold: false
@@ -29,10 +38,12 @@ ListItem {
         id: remorse
     }
 
-    function removeFile(url,pos) {
+    function removeFile(url, pos) {
         //console.debug("[DirEntry] Request removal of: " + url)
-        if (fileIsDir) dirRemove(url)
-        else fileRemove(url)
+        if (fileIsDir)
+            dirRemove(url)
+        else
+            fileRemove(url)
         //entries.remove(pos)
     }
 
@@ -49,28 +60,38 @@ ListItem {
         id: myMenu
         DirEntryMenu {
             onFileRemove: {
-                if (fileIsDir) entryItem.dirRemove(url)
-                else entryItem.fileRemove(url)
+                if (fileIsDir)
+                    entryItem.dirRemove(url)
+                else
+                    entryItem.fileRemove(url)
             }
         }
     }
 
     function showContextMenu() {
         //var filePath = getFullName(fileName)
-//        if (!Util.isSpecialPath(filePath))
-            openMenu({fileName: fileName
-                      , fileType: fileType
-                      , filePath: filePath})
+        //        if (!Util.isSpecialPath(filePath))
+        openMenu({
+                     "fileName": fileName,
+                     "fileType": fileType,
+                     "filePath": filePath
+                 })
     }
 
-    onClicked : {
+    onClicked: {
         if (fileIsDir) {
-            if (fileName !== '.' && fileName !== '..') {  // Very unlikely as we don't show dot or dotdot
+            if (fileName !== '.' && fileName !== '..') {
+                // Very unlikely as we don't show dot or dotdot
                 var url = Qt.resolvedUrl('DirView.qml')
-                myList.showAbove(url, {root: filePath, dataContainer: dataContainer })
+                myList.showAbove(url, {
+                                     "root": filePath,
+                                     "dataContainer": dataContainer
+                                 })
             }
         } else {
-            pageStack.push(Qt.resolvedUrl("../MediaInfo.qml"), { fileName: filePath } )
+            pageStack.push(Qt.resolvedUrl("../MediaInfo.qml"), {
+                               "fileName": filePath
+                           })
             // openFile()
         }
     }
@@ -90,16 +111,16 @@ ListItem {
 
             function getSource() {
                 var sources = {
-                    f : "image://theme/icon-m-document"
-                    , v : "image://theme/icon-m-file-video"
-                    , a : "image://theme/icon-m-file-audio"
-                    , i : "image://theme/icon-m-file-image"
-                    , t : "image://theme/icon-m-file-document"
-                    , p : "image://theme/icon-m-file-pdf"
-                    , apk : "image://theme/icon-m-file-apk"
-                    , r : "image://theme/icon-m-file-rpm"
-                    , d : "image://theme/icon-m-folder"
-                    , s : "image://theme/icon-m-link"
+                    "f": "image://theme/icon-m-document",
+                    "v": "image://theme/icon-m-file-video",
+                    "a": "image://theme/icon-m-file-audio",
+                    "i": "image://theme/icon-m-file-image",
+                    "t": "image://theme/icon-m-file-document",
+                    "p": "image://theme/icon-m-file-pdf",
+                    "apk": "image://theme/icon-m-file-apk",
+                    "r": "image://theme/icon-m-file-rpm",
+                    "d": "image://theme/icon-m-folder",
+                    "s": "image://theme/icon-m-link"
                 }
                 return sources[fileType] || "image://theme/icon-m-other"
             }
@@ -137,10 +158,11 @@ ListItem {
                 font.pixelSize: Theme.fontSizeExtraSmall
 
                 function infoString() {
-                    switch(fileType) {
+                    switch (fileType) {
                     case 'd':
                         return qsTr('directory')
-                    case 's': {
+                    case 's':
+                    {
                         var fullName = myList.getFullName(fileName)
                         var fi = Util.fileInfo(fullName)
                         return '-> ' + fi.symLinkTarget()
@@ -158,13 +180,11 @@ ListItem {
                         s /= 1024
                         ++i
                     }
-                    return (i < suffices.length)
-                        ? String(s.toFixed(i < 2 ? 0 : 1)) + suffices[i]
-                    : "?"
+                    return (i < suffices.length) ? String(
+                                                       s.toFixed(
+                                                           i < 2 ? 0 : 1)) + suffices[i] : "?"
                 }
-
             }
-
         }
         Image {
             id: auxLabel
@@ -175,5 +195,4 @@ ListItem {
             }
         }
     }
-
 }

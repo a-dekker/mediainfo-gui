@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.5
 import Sailfish.Silica 1.0
 import mediainfo.Browser 1.0
 
@@ -10,15 +10,15 @@ Page {
     property bool selectMode: false
     property bool onlyFolders: false
     property string path
-    property variant filter: [ "*" ]
+    property variant filter: ["*"]
     property string title
 
     property QtObject dataContainer
 
-    signal fileOpen(string path);
+    signal fileOpen(string path)
 
     onPathChanged: {
-        openFile(path);
+        openFile(path)
     }
 
     function openFile(path) {
@@ -29,7 +29,7 @@ Page {
 
     FolderListModel {
         id: fileModel
-        folder: path ? path: _fm.getHome()  // "/home/nemo/Video"
+        folder: path ? path : _fm.getHome() // "/home/nemo/Video"
         showDirsFirst: true
         showDotAndDotDot: false
         showOnlyReadable: true
@@ -37,44 +37,38 @@ Page {
     }
 
     function humanSize(bytes) {
-        var precision = 2;
-        var kilobyte = 1024;
-        var megabyte = kilobyte * 1024;
-        var gigabyte = megabyte * 1024;
-        var terabyte = gigabyte * 1024;
+        var precision = 2
+        var kilobyte = 1024
+        var megabyte = kilobyte * 1024
+        var gigabyte = megabyte * 1024
+        var terabyte = gigabyte * 1024
 
         if ((bytes >= 0) && (bytes < kilobyte)) {
-            return bytes + ' B';
-
+            return bytes + ' B'
         } else if ((bytes >= kilobyte) && (bytes < megabyte)) {
-            return (bytes / kilobyte).toFixed(precision) + ' KB';
-
+            return (bytes / kilobyte).toFixed(precision) + ' KB'
         } else if ((bytes >= megabyte) && (bytes < gigabyte)) {
-            return (bytes / megabyte).toFixed(precision) + ' MB';
-
+            return (bytes / megabyte).toFixed(precision) + ' MB'
         } else if ((bytes >= gigabyte) && (bytes < terabyte)) {
-            return (bytes / gigabyte).toFixed(precision) + ' GB';
-
+            return (bytes / gigabyte).toFixed(precision) + ' GB'
         } else if (bytes >= terabyte) {
-            return (bytes / terabyte).toFixed(precision) + ' TB';
-
+            return (bytes / terabyte).toFixed(precision) + ' TB'
         } else {
-            return bytes + ' B';
+            return bytes + ' B'
         }
     }
 
     function findBaseName(url) {
-        url = url.toString();
-        var fileName = url.substring(url.lastIndexOf('/') + 1);
-        return fileName;
+        url = url.toString()
+        var fileName = url.substring(url.lastIndexOf('/') + 1)
+        return fileName
     }
 
     function findFullPath(url) {
-        url = url.toString();
-        var fullPath = url.substring(url.lastIndexOf('://') + 3);
-        return fullPath;
+        url = url.toString()
+        var fullPath = url.substring(url.lastIndexOf('://') + 3)
+        return fullPath
     }
-
 
     SilicaListView {
         id: view
@@ -82,43 +76,51 @@ Page {
         anchors.fill: parent
 
         header: PageHeader {
-            title: if (page.title != "") return page.title
-                   else return findBaseName((fileModel.folder).toString())
+            title: if (page.title != "")
+                       return page.title
+                   else
+                       return findBaseName((fileModel.folder).toString())
             description: findFullPath(fileModel.folder.toString())
         }
 
         PullDownMenu {
             MenuItem {
                 text: qsTr("Show Filesystem Root")
-                onClicked: fileModel.folder = _fm.getRoot();
+                onClicked: fileModel.folder = _fm.getRoot()
             }
             MenuItem {
                 text: qsTr("Show Home")
-                onClicked: fileModel.folder = _fm.getHome();
+                onClicked: fileModel.folder = _fm.getHome()
             }
             MenuItem {
                 text: qsTr("Show Android SDCard")
-                onClicked: fileModel.folder = _fm.getRoot() + "sdcard";
+                onClicked: fileModel.folder = _fm.getRoot() + "sdcard"
             }
             MenuItem {
                 text: qsTr("Show SDCard")
-                onClicked: fileModel.folder = _fm.getRoot() + "media/sdcard";
+                onClicked: fileModel.folder = _fm.getRoot() + "media/sdcard"
             }
             MenuItem {
                 id: pasteMenuEntry
-                visible: { if (_fm.sourceUrl != "" && _fm.sourceUrl != undefined) return true;
-                    else return false
+                visible: {
+                    if (_fm.sourceUrl != "" && _fm.sourceUrl != undefined)
+                        return true
+                    else
+                        return false
                 }
                 text: qsTr("Paste") + "(" + findBaseName(_fm.sourceUrl) + ")"
                 onClicked: {
                     busyInd.running = true
                     if (_fm.moveMode) {
                         //console.debug("Moving " + _fm.sourceUrl + " to " + findFullPath(fileModel.folder)+ "/" + findBaseName(_fm.sourceUrl));
-                        _fm.moveFile(_fm.sourceUrl,findFullPath(fileModel.folder) + "/" + findBaseName(_fm.sourceUrl))
-                    }
-                    else {
+                        _fm.moveFile(_fm.sourceUrl, findFullPath(
+                                         fileModel.folder) + "/" + findBaseName(
+                                         _fm.sourceUrl))
+                    } else {
                         //console.debug("Copy " + _fm.sourceUrl + " to " + findFullPath(fileModel.folder)+ "/" + findBaseName(_fm.sourceUrl));
-                        _fm.copyFile(_fm.sourceUrl,findFullPath(fileModel.folder) + "/" + findBaseName(_fm.sourceUrl))
+                        _fm.copyFile(_fm.sourceUrl, findFullPath(
+                                         fileModel.folder) + "/" + findBaseName(
+                                         _fm.sourceUrl))
                     }
                 }
             }
@@ -127,7 +129,7 @@ Page {
         PushUpMenu {
             MenuItem {
                 text: qsTr("Scroll to top")
-                onClicked: entriesList.scrollToTop();
+                onClicked: entriesList.scrollToTop()
             }
         }
 
@@ -136,12 +138,21 @@ Page {
             width: view.width
             height: menuOpen ? contextMenu.height + delegate.height : delegate.height
             property Item contextMenu
-            property bool menuOpen: contextMenu != null && contextMenu.parent === bgdelegate
+            property bool menuOpen: contextMenu != null
+                                    && contextMenu.parent === bgdelegate
 
             function remove() {
                 var removal = removalComponent.createObject(bgdelegate)
-                if (fileIsDir) removal.execute(delegate,qsTr("Deleting ") + fileName, function() { _fm.removeDir(filePath); })
-                else removal.execute(delegate,qsTr("Deleting ") + fileName, function() { _fm.remove(filePath); })
+                if (fileIsDir)
+                    removal.execute(delegate, qsTr("Deleting ") + fileName,
+                                    function () {
+                                        _fm.removeDir(filePath)
+                                    })
+                else
+                    removal.execute(delegate, qsTr("Deleting ") + fileName,
+                                    function () {
+                                        _fm.remove(filePath)
+                                    })
             }
 
             function copy() {
@@ -150,8 +161,8 @@ Page {
             }
 
             function move() {
-                _fm.moveMode = true;
-                copy();
+                _fm.moveMode = true
+                copy()
             }
 
             ListItem {
@@ -159,10 +170,13 @@ Page {
 
                 openMenuOnPressAndHold: false
                 menu: myMenu
-                visible : {
-                    if (onlyFolders && fileIsDir) return true
-                    else if (onlyFolders) return false
-                    else return true
+                visible: {
+                    if (onlyFolders && fileIsDir)
+                        return true
+                    else if (onlyFolders)
+                        return false
+                    else
+                        return true
                 }
 
                 function showContextMenu() {
@@ -171,26 +185,35 @@ Page {
                     contextMenu.show(bgdelegate)
                 }
 
-                Image
-                {
+                Image {
                     id: fileIcon
                     anchors.left: parent.left
                     anchors.leftMargin: Theme.paddingSmall
                     anchors.verticalCenter: parent.verticalCenter
                     source: {
-                        if (fileIsDir) "image://theme/icon-m-folder"
-                        else if (_fm.getMime(filePath).indexOf("video") !== -1) "image://theme/icon-m-file-video"
-                        else if (_fm.getMime(filePath).indexOf("audio") !== -1) "image://theme/icon-m-file-audio"
-                        else if (_fm.getMime(filePath).indexOf("image") !== -1) "image://theme/icon-m-file-image"
-                        else if (_fm.getMime(filePath).indexOf("text") !== -1) "image://theme/icon-m-file-document"
-                        else if (_fm.getMime(filePath).indexOf("pdf") !== -1) "image://theme/icon-m-file-pdf"
-                        else if (_fm.getMime(filePath).indexOf("android") !== -1) "image://theme/icon-m-file-apk"
-                        else if (_fm.getMime(filePath).indexOf("rpm") !== -1) "image://theme/icon-m-file-rpm"
-                        else "image://theme/icon-m-document"
+                        if (fileIsDir)
+                            "image://theme/icon-m-folder"
+                        else if (_fm.getMime(filePath).indexOf("video") !== -1)
+                            "image://theme/icon-m-file-video"
+                        else if (_fm.getMime(filePath).indexOf("audio") !== -1)
+                            "image://theme/icon-m-file-audio"
+                        else if (_fm.getMime(filePath).indexOf("image") !== -1)
+                            "image://theme/icon-m-file-image"
+                        else if (_fm.getMime(filePath).indexOf("text") !== -1)
+                            "image://theme/icon-m-file-document"
+                        else if (_fm.getMime(filePath).indexOf("pdf") !== -1)
+                            "image://theme/icon-m-file-pdf"
+                        else if (_fm.getMime(filePath).indexOf(
+                                     "android") !== -1)
+                            "image://theme/icon-m-file-apk"
+                        else if (_fm.getMime(filePath).indexOf("rpm") !== -1)
+                            "image://theme/icon-m-file-rpm"
+                        else
+                            "image://theme/icon-m-document"
                     }
-//                    Component.onCompleted: {
-//                        console.debug("File " + fileName + " has mimetype: " + _fm.getMime(filePath))
-//                    }
+                    //                    Component.onCompleted: {
+                    //                        console.debug("File " + fileName + " has mimetype: " + _fm.getMime(filePath))
+                    //                    }
                 }
 
                 Label {
@@ -201,7 +224,11 @@ Page {
                     anchors.verticalCenter: fileInfo.text == "" ? parent.verticalCenter : undefined
                     text: fileName //+ (fileIsDir ? "/" : "")
                     color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
-                    width: mSelect.visible ? parent.width - (fileIcon.width + Theme.paddingLarge + Theme.paddingSmall + mSelect.width) : parent.width - (fileIcon.width + Theme.paddingLarge + Theme.paddingSmall)
+                    width: mSelect.visible ? parent.width
+                                             - (fileIcon.width + Theme.paddingLarge
+                                                + Theme.paddingSmall + mSelect.width) : parent.width
+                                             - (fileIcon.width + Theme.paddingLarge
+                                                + Theme.paddingSmall)
                     truncationMode: TruncationMode.Fade
                 }
                 Label {
@@ -209,9 +236,11 @@ Page {
                     anchors.left: fileIcon.right
                     anchors.leftMargin: Theme.paddingLarge
                     anchors.top: fileLabel.bottom
-                    text: fileIsDir ? qsTr("directory") : humanSize(fileSize) + ", " + fileModified
+                    text: fileIsDir ? qsTr("directory") : humanSize(
+                                          fileSize) + ", " + fileModified
                     color: Theme.secondaryColor
-                    width: parent.width - fileIcon.width - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge)
+                    width: parent.width - fileIcon.width
+                           - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge)
                     truncationMode: TruncationMode.Fade
                 }
                 Switch {
@@ -221,26 +250,32 @@ Page {
                     checked: false
                     onClicked: {
                         checked = !checked
-                        fileOpen(filePath);
-                        pageStack.pop();
+                        fileOpen(filePath)
+                        pageStack.pop()
                     }
                 }
 
                 onClicked: {
-                    if(multiSelect)
-                    {
+                    if (multiSelect) {
                         mSelect.checked = !mSelect.checked
-                        return;
+                        return
                     }
 
                     if (fileIsDir) {
-                        var anotherFM = pageStack.push(Qt.resolvedUrl("OpenDialog.qml"), {"path": filePath, "dataContainer": dataContainer, "selectMode": selectMode, "multiSelect": multiSelect});
+                        var anotherFM = pageStack.push(Qt.resolvedUrl(
+                                                           "OpenDialog.qml"), {
+                                                           "path": filePath,
+                                                           "dataContainer": dataContainer,
+                                                           "selectMode": selectMode,
+                                                           "multiSelect": multiSelect
+                                                       })
                         anotherFM.fileOpen.connect(fileOpen)
                     } else {
-                        if (!selectMode) openFile(filePath)
+                        if (!selectMode)
+                            openFile(filePath)
                         else {
-                            fileOpen(filePath);
-                            pageStack.pop(dataContainer);
+                            fileOpen(filePath)
+                            pageStack.pop(dataContainer)
                         }
                     }
                 }
@@ -261,52 +296,52 @@ Page {
                     MenuItem {
                         text: qsTr("Cut")
                         onClicked: {
-                            bgdelegate.move();
+                            bgdelegate.move()
                         }
                     }
                     MenuItem {
                         text: qsTr("Copy")
                         onClicked: {
-                            bgdelegate.copy();
+                            bgdelegate.copy()
                         }
                     }
                     MenuItem {
                         text: qsTr("Delete")
                         onClicked: {
-                            bgdelegate.remove();
+                            bgdelegate.remove()
                         }
                     }
                 }
             }
-
         }
-        VerticalScrollDecorator { flickable: view }
+        VerticalScrollDecorator {
+            flickable: view
+        }
     }
     Connections {
         target: _fm
         onSourceUrlChanged: {
             if (_fm.sourceUrl != "" && _fm.sourceUrl != undefined) {
-                pasteMenuEntry.visible = true;
-            }
-            else pasteMenuEntry.visible = false;
+                pasteMenuEntry.visible = true
+            } else
+                pasteMenuEntry.visible = false
         }
         onCpResultChanged: {
             if (!_fm.cpResult) {
                 var message = qsTr("Error pasting file ") + _fm.sourceUrl
-                console.debug(message);
+                console.debug(message)
                 mainWindow.infoBanner.parent = page
                 mainWindow.infoBanner.anchors.top = page.top
                 infoBanner.showText(message)
-            }
-            else {
-                _fm.sourceUrl = "";
+            } else {
+                _fm.sourceUrl = ""
                 var message = qsTr("File operation succeeded")
-                console.debug(message);
+                console.debug(message)
                 mainWindow.infoBanner.parent = page
                 mainWindow.infoBanner.anchors.top = page.top
                 infoBanner.showText(message)
             }
-            busyInd.running = false;
+            busyInd.running = false
         }
     }
 

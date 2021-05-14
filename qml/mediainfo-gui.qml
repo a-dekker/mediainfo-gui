@@ -1,3 +1,5 @@
+
+
 /*
   Copyright (C) 2013 Jolla Ltd.
   Contact: Thomas Perl <thomas.perl@jollamobile.com>
@@ -27,14 +29,12 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-
-import QtQuick 2.0
+import QtQuick 2.5
 import Sailfish.Silica 1.0
 import mediainfo.Browser 1.0
 import "pages"
 
-ApplicationWindow
-{
+ApplicationWindow {
     id: mainapp
     property string mediainfoVersion
     property string exifToolVersion
@@ -42,16 +42,17 @@ ApplicationWindow
     allowedOrientations: Orientation.Portrait | Orientation.Landscape
                          | Orientation.LandscapeInverted
     _defaultPageOrientations: Orientation.Portrait | Orientation.Landscape
-                         | Orientation.LandscapeInverted
+                              | Orientation.LandscapeInverted
 
     signal fileRemove(string url)
 
-    initialPage: Component { MainPage {
+    initialPage: Component {
+        MainPage {
             onRemoveFile: {
-                console.debug("Request removal of" + url);
-                fileRemove(url);
+                console.debug("Request removal of" + url)
+                fileRemove(url)
             }
         }
-     }
+    }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 }

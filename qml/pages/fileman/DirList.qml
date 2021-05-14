@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.5
 import Sailfish.Silica 1.0
 import mediainfo.Browser 1.0
 
@@ -40,75 +40,100 @@ SilicaListView {
     model: entries
 
     function forEach(arr, fn) {
-        var i;
+        var i
         for (i = 0; i < arr.length; ++i)
-            fn(arr[i]);
+            fn(arr[i])
     }
 
     function showAbove(pages, params, immediate) {
         if (!isLoaded)
-            state = "interrupted";
-        pageStack.push(pages, params, immediate);
+            state = "interrupted"
+        pageStack.push(pages, params, immediate)
     }
 
     function goHome() {
         if (root == home)
-            return;
+            return
 
-        var url = Qt.resolvedUrl('DirView.qml');
-        var pages = [];
-        var path = home;
+        var url = Qt.resolvedUrl('DirView.qml')
+        var pages = []
+        var path = home
 
-        pages.push({page: url, properties: {root: path, dataContainer: dataContainer}});
+        pages.push({
+                       "page": url,
+                       "properties": {
+                           "root": path,
+                           "dataContainer": dataContainer
+                       }
+                   })
 
-        entriesList.showAbove(pages);
+        entriesList.showAbove(pages)
     }
 
     function goAndroidSd() {
-        var url = Qt.resolvedUrl('DirView.qml');
-        var pages = [];
-        var path = "/sdcard";
+        var url = Qt.resolvedUrl('DirView.qml')
+        var pages = []
+        var path = "/sdcard"
 
-        pages.push({page: url, properties: {root: path, dataContainer: dataContainer}});
+        pages.push({
+                       "page": url,
+                       "properties": {
+                           "root": path,
+                           "dataContainer": dataContainer
+                       }
+                   })
 
-        entriesList.showAbove(pages);
+        entriesList.showAbove(pages)
     }
 
     function goRoot() {
-        var url = Qt.resolvedUrl('DirView.qml');
-        var pages = [];
-        var path = "/";
+        var url = Qt.resolvedUrl('DirView.qml')
+        var pages = []
+        var path = "/"
 
-        pages.push({page: url, properties: {root: path, dataContainer: dataContainer}});
+        pages.push({
+                       "page": url,
+                       "properties": {
+                           "root": path,
+                           "dataContainer": dataContainer
+                       }
+                   })
 
-        entriesList.showAbove(pages);
+        entriesList.showAbove(pages)
     }
 
     function goSd() {
-        var url = Qt.resolvedUrl('DirView.qml');
-        var pages = [];
-        var path = "/media/sdcard";
+        var url = Qt.resolvedUrl('DirView.qml')
+        var pages = []
+        var path = "/media/sdcard"
 
-        pages.push({page: url, properties: {root: path, dataContainer: dataContainer}});
+        pages.push({
+                       "page": url,
+                       "properties": {
+                           "root": path,
+                           "dataContainer": dataContainer
+                       }
+                   })
 
-        entriesList.showAbove(pages);
+        entriesList.showAbove(pages)
     }
 
-    function showHidden() {   // Only works with Qt 5.2 and Qt.labs.folderlistmodel 2.1
+    function showHidden() {
+        // Only works with Qt 5.2 and Qt.labs.folderlistmodel 2.1
         entries.showHidden = !entries.showHidden
         isHidden = !isHidden
     }
 
     function findBaseName(url) {
-        url = url.toString();
-        var fileName = url.substring(url.lastIndexOf('/') + 1);
-        return fileName;
+        url = url.toString()
+        var fileName = url.substring(url.lastIndexOf('/') + 1)
+        return fileName
     }
 
     function findFullPath(url) {
-        url = url.toString();
-        var fullPath = url.substring(url.lastIndexOf('://') + 3);
-        return fullPath;
+        url = url.toString()
+        var fullPath = url.substring(url.lastIndexOf('://') + 3)
+        return fullPath
     }
 
     states: [
@@ -116,72 +141,78 @@ SilicaListView {
             name: "load"
             StateChangeScript {
                 script: {
+
                     //Util.waitOperationCompleted();  // Not necessary if requestData not working
                     //entries.clear();
                     //requestData(usableCount, true); // Not working currently so disabled
                 }
             }
-        }
-        , State {
+        },
+        State {
             name: "interrupted"
-        }
-        , State {
+        },
+        State {
             name: "loaded"
             when: isLoaded
         }
-//        , State {
-//            name: "loading"
-//            when: isUsable && dirViewPage.status === PageStatus.Active
-//            StateChangeScript {
-//                script: {
-//                    dataAdded();
-//                }
-//            }
-//        }
-//        , State {
-//            name: "usable"
-//            when: isUsable
-//        }
+        //        , State {
+        //            name: "loading"
+        //            when: isUsable && dirViewPage.status === PageStatus.Active
+        //            StateChangeScript {
+        //                script: {
+        //                    dataAdded();
+        //                }
+        //            }
+        //        }
+        //        , State {
+        //            name: "usable"
+        //            when: isUsable
+        //        }
     ]
 
     PullDownMenu {
         MenuItem {
-            text: isHidden ? qsTr("Show Hidden Files") : qsTr("Hide Hidden Files")
-            onClicked: entriesList.showHidden();
+            text: isHidden ? qsTr("Show Hidden Files") : qsTr(
+                                 "Hide Hidden Files")
+            onClicked: entriesList.showHidden()
         }
         MenuItem {
             text: qsTr("Show Filesystem Root")
-            onClicked: entriesList.goRoot();
+            onClicked: entriesList.goRoot()
         }
         MenuItem {
             text: qsTr("Show Home")
-            onClicked: entriesList.goHome();
+            onClicked: entriesList.goHome()
         }
         MenuItem {
             text: qsTr("Show Android SDCard")
-            onClicked: entriesList.goAndroidSd();
+            onClicked: entriesList.goAndroidSd()
         }
         MenuItem {
             text: qsTr("Show SDCard")
-            onClicked: entriesList.goSd();
+            onClicked: entriesList.goSd()
             visible: _fm.existsPath("/media/sdcard")
             //Component.onCompleted: console.debug("[DirList] SD Card status: " + Util.existsPath("/media/sdcard"))
         }
         MenuItem {
             id: pasteMenuEntry
-            visible: { if (_fm.sourceUrl != "" && _fm.sourceUrl != undefined) return true;
-                else return false
+            visible: {
+                if (_fm.sourceUrl != "" && _fm.sourceUrl != undefined)
+                    return true
+                else
+                    return false
             }
             text: qsTr("Paste") + "(" + findBaseName(_fm.sourceUrl) + ")"
             onClicked: {
                 busyInd.running = true
                 if (_fm.moveMode) {
                     //console.debug("Moving " + _fm.sourceUrl + " to " + root+ "/" + findBaseName(_fm.sourceUrl));
-                    _fm.moveFile(_fm.sourceUrl,root + "/" + findBaseName(_fm.sourceUrl));
-                }
-                else {
+                    _fm.moveFile(_fm.sourceUrl,
+                                 root + "/" + findBaseName(_fm.sourceUrl))
+                } else {
                     //console.debug("Copy " + _fm.sourceUrl + " to " + root+ "/" + findBaseName(_fm.sourceUrl));
-                    _fm.copyFile(_fm.sourceUrl,root + "/" + findBaseName(_fm.sourceUrl))
+                    _fm.copyFile(_fm.sourceUrl,
+                                 root + "/" + findBaseName(_fm.sourceUrl))
                 }
             }
         }
@@ -189,7 +220,7 @@ SilicaListView {
     PushUpMenu {
         MenuItem {
             text: qsTr("Scroll to top")
-            onClicked: entriesList.scrollToTop();
+            onClicked: entriesList.scrollToTop()
         }
     }
 
@@ -198,21 +229,21 @@ SilicaListView {
     }
 
     function getFullName(fileName) {
-        return entriesList.root + '/' + fileName;
+        return entriesList.root + '/' + fileName
     }
 
     delegate: DirEntry {
         myList: entriesList
         onMediaFileOpen: {
             //console.debug("[DirList] MediaFileOpen:"+ url);
-            entriesList.mediaFileOpen(url);
+            entriesList.mediaFileOpen(url)
         }
         onFileRemove: {
             //console.debug("[DirList] Request removal of: " + url);
-            entriesList.fileRemove(url);
+            entriesList.fileRemove(url)
         }
         onDirRemove: {
-            entriesList.dirRemove(url);
+            entriesList.dirRemove(url)
         }
     }
 
@@ -222,27 +253,26 @@ SilicaListView {
         target: _fm
         onSourceUrlChanged: {
             if (_fm.sourceUrl != "" && _fm.sourceUrl != undefined) {
-                pasteMenuEntry.visible = true;
-            }
-            else pasteMenuEntry.visible = false;
+                pasteMenuEntry.visible = true
+            } else
+                pasteMenuEntry.visible = false
         }
         onCpResultChanged: {
             if (!_fm.cpResult) {
                 var message = qsTr("Error pasting file ") + _fm.sourceUrl
-                console.debug(message);
+                console.debug(message)
                 mainWindow.infoBanner.parent = dirViewPage
                 mainWindow.infoBanner.anchors.top = dirViewPage.top
                 infoBanner.showText(message)
-            }
-            else {
-                _fm.sourceUrl = "";
+            } else {
+                _fm.sourceUrl = ""
                 var message = qsTr("File operation succeeded")
-                console.debug(message);
+                console.debug(message)
                 mainWindow.infoBanner.parent = dirViewPage
                 mainWindow.infoBanner.anchors.top = dirViewPage.top
                 infoBanner.showText(message)
             }
-            busyInd.running = false;
+            busyInd.running = false
         }
     }
 
@@ -253,5 +283,4 @@ SilicaListView {
         anchors.left: parent.left
         anchors.leftMargin: Theme.paddingLarge
     }
-
 }

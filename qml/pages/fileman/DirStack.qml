@@ -1,11 +1,11 @@
-import QtQuick 2.0
+import QtQuick 2.5
 import Sailfish.Silica 1.0
 
 SilicaListView {
     id: dirStackList
     orientation: ListView.Horizontal
     model: dirStack
-    delegate : ListItem {
+    delegate: ListItem {
         height: Theme.itemSizeMedium
         width: entryItem.width
         Row {
@@ -18,7 +18,7 @@ SilicaListView {
                 text: name
                 font.pixelSize: Theme.fontSizeMedium
                 width: paintedWidth //+ Theme.paddingMedium
-                horizontalAlignment:  Text.AlignHCenter
+                horizontalAlignment: Text.AlignHCenter
                 anchors {
                     verticalCenter: parent.verticalCenter
                 }
@@ -33,7 +33,7 @@ SilicaListView {
         }
         onClicked: {
             //console.log("Click on ", name, index);
-            popToDirectory(index);
+            popToDirectory(index)
         }
     }
     HorizontalScrollDecorator {}

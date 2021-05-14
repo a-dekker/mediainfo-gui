@@ -1,20 +1,21 @@
-import QtQuick 2.0
+import QtQuick 2.5
 import Sailfish.Silica 1.0
 
 Page {
-    id : dirViewPage
+    id: dirViewPage
     allowedOrientations: Orientation.All
     //property int entriesCount: dirStack.count
     property string currentDirectory
     property QtObject dataContainer
 
-    onStatusChanged : {
+    onStatusChanged: {
         switch (status) {
-        case PageStatus.Activating: {
-            currentDirectory = root;
+        case PageStatus.Activating:
+        {
+            currentDirectory = root
             if (dirList.state !== "loaded")
-                dirList.state = "load";
-            break;
+                dirList.state = "load"
+            break
         }
         }
     }
@@ -23,7 +24,7 @@ Page {
     property string root: "/home/nemo/Videos" // A sane default here for Videos
 
     function reloadList() {
-        dirList.state = "load";
+        dirList.state = "load"
     }
 
     DirList {
@@ -39,28 +40,28 @@ Page {
             //bottomMargin: Theme.paddingLarge
         }
 
-        onIsUsableChanged : {
+        onIsUsableChanged: {
             if (dirList.isUsable)
-                dirViewPage.setupDirStack(dirList.root);
+                dirViewPage.setupDirStack(dirList.root)
         }
 
         onMediaFileOpen: {
             //console.debug("DirView MediaFileOpen:" + url);
-            dataContainer.originalUrl = url;
-            dataContainer.streamUrl = url;
-            dataContainer.streamTitle = "";
+            dataContainer.originalUrl = url
+            dataContainer.streamUrl = url
+            dataContainer.streamTitle = ""
         }
         onFileRemove: {
             //console.debug("[DirView]Requesting removal of file " + url);
-            _fm.remove(url);
+            _fm.remove(url)
         }
         onDirRemove: {
-            _fm.removeDir(url);
+            _fm.removeDir(url)
         }
     }
 
     Component.onCompleted: {
-        dirList.root = (root !== "" ? root : _fm.getRoot());
+        dirList.root = (root !== "" ? root : _fm.getRoot())
         //console.debug(dataContainer)
     }
 }

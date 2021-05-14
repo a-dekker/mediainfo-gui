@@ -1,6 +1,6 @@
 ## Synopsis
 
-mediainfo-gui is a graphical user interface for [MediaInfo](http://mediaarea.net/en/MediaInfo)
+mediainfo-gui is a graphical user interface for [MediaInfo](http://mediaarea.net/en/MediaInfo) and [ExifTool](https://sno.phy.queensu.ca/~phil/exiftool/)
 
 ## Motivation
 

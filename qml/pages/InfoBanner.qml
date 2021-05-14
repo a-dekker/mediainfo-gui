@@ -1,3 +1,5 @@
+
+
 /*
     This code was taken from Tweetian by Dickson Leong
     License: GPLv3
@@ -13,8 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
-
-import QtQuick 2.0
+import QtQuick 2.5
 import Sailfish.Silica 1.0
 
 Rectangle {
@@ -47,8 +48,14 @@ Rectangle {
         wrapMode: Text.Wrap
     }
 
-    Behavior on opacity { FadeAnimation {} }
-    Behavior on height { NumberAnimation { duration: 250} }
+    Behavior on opacity {
+        FadeAnimation {}
+    }
+    Behavior on height {
+        NumberAnimation {
+            duration: 250
+        }
+    }
 
     Timer {
         id: closeTimer

@@ -1,6 +1,7 @@
-import QtQuick 2.0
+import QtQuick 2.5
 import Sailfish.Silica 1.0
 import Launcher 1.0
+import Sailfish.Pickers 1.0
 
 Page {
     id: page
@@ -11,19 +12,19 @@ Page {
         mainapp.mediainfoVersion = bar.launch("mediainfo --version")
         mainapp.exifToolVersion = bar.launch("exiftool -ver")
         mainMenuModel.append({
-                                 name: qsTr("Browse"),
-                                 ident: "browse",
-                                 icon: "image://theme/icon-m-folder"
+                                 "name": qsTr("Browse"),
+                                 "ident": "browse",
+                                 "icon": "image://theme/icon-m-folder"
                              })
         mainMenuModel.append({
-                                 name: qsTr("Images"),
-                                 ident: "image_gallery",
-                                 icon: "image://theme/icon-m-image"
+                                 "name": qsTr("Images"),
+                                 "ident": "image_gallery",
+                                 "icon": "image://theme/icon-m-image"
                              })
         mainMenuModel.append({
-                                 name: qsTr("Videos"),
-                                 ident: "video_gallery",
-                                 icon: "image://theme/icon-m-video"
+                                 "name": qsTr("Videos"),
+                                 "ident": "video_gallery",
+                                 "icon": "image://theme/icon-m-video"
                              })
     }
 
@@ -37,14 +38,20 @@ Page {
         } else if (ident === "image_gallery") {
             var imagePicker = pageStack.push("Sailfish.Pickers.ImagePickerPage")
             imagePicker.selectedContentChanged.connect(function () {
-                var filePath = imagePicker.selectedContent.toString().slice(7,imagePicker.selectedContent.length)
-                pageStack.push(Qt.resolvedUrl("MediaInfo.qml"),{ fileName: filePath})
+                var filePath = imagePicker.selectedContent.toString().slice(
+                            7, imagePicker.selectedContent.length)
+                pageStack.push(Qt.resolvedUrl("MediaInfo.qml"), {
+                                   "fileName": filePath
+                               })
             })
         } else if (ident === "video_gallery") {
             var videoPicker = pageStack.push("Sailfish.Pickers.VideoPickerPage")
             videoPicker.selectedContentChanged.connect(function () {
-                var filePath = videoPicker.selectedContent.toString().slice(7,videoPicker.selectedContent.length)
-                pageStack.push(Qt.resolvedUrl("MediaInfo.qml"),{ fileName: filePath})
+                var filePath = videoPicker.selectedContent.toString().slice(
+                            7, videoPicker.selectedContent.length)
+                pageStack.push(Qt.resolvedUrl("MediaInfo.qml"), {
+                                   "fileName": filePath
+                               })
             })
         }
     }
@@ -167,7 +174,7 @@ Page {
                                     font.pixelSize: Theme.fontSizeMedium
                                     width: gridItem.width - (2 * Theme.paddingSmall)
                                     horizontalAlignment: "AlignHCenter"
-                                     scale: paintedWidth > width ? (width / paintedWidth) : 1
+                                    scale: paintedWidth > width ? (width / paintedWidth) : 1
                                     text: name
                                 }
                             }
@@ -191,7 +198,9 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
             color: Theme.primaryColor
             font.pixelSize: Theme.fontSizeMedium
-            text: qsTr("Homepage") + " <a href=\"http://mediaarea.net/en/MediaInfo\">Mediainfo</a>" + " &amp; " + "<a href=\"http://www.sno.phy.queensu.ca/~phil/exiftool/\">ExifTool</a>"
+            text: qsTr("Homepage")
+                  + " <a href=\"http://mediaarea.net/en/MediaInfo\">Mediainfo</a>" + " &amp; "
+                  + "<a href=\"http://www.sno.phy.queensu.ca/~phil/exiftool/\">ExifTool</a>"
             onLinkActivated: Qt.openUrlExternally(link)
             linkColor: Theme.highlightColor
         }

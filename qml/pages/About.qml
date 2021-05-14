@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.5
 import Sailfish.Silica 1.0
 
 Page {
@@ -9,8 +9,7 @@ Page {
         contentWidth: parent.width
         contentHeight: col.height
 
-        VerticalScrollDecorator {
-        }
+        VerticalScrollDecorator {}
 
         Column {
             id: col
@@ -31,7 +30,7 @@ Page {
             }
             Image {
                 anchors.horizontalCenter: parent.horizontalCenter
-                    source: largeScreen ? "/usr/share/icons/hicolor/256x256/apps/mediainfo-gui.png" : "/usr/share/icons/hicolor/86x86/apps/mediainfo-gui.png"
+                source: largeScreen ? "/usr/share/icons/hicolor/256x256/apps/mediainfo-gui.png" : "/usr/share/icons/hicolor/86x86/apps/mediainfo-gui.png"
             }
             Label {
                 font.pixelSize: largeScreen ? Theme.fontSizeLarge : Theme.fontSizeMedium
@@ -58,11 +57,12 @@ Page {
             }
             Label {
                 text: mainapp.exifToolVersion
-                      === "" ? qsTr("ExifTool not found. Using ")+ mainapp.mediainfoVersion.replace(
-                                   "\n",
-                                   "") : qsTr("Using ")+ mainapp.mediainfoVersion.replace(
-                                   /(\r\n|\n|\r)/gm,
-                                   "") + qsTr(" and ExifTool ") + mainapp.exifToolVersion
+                      === "" ? qsTr(
+                                   "ExifTool not found. Using ") + mainapp.mediainfoVersion.replace(
+                                   "\n", "") : qsTr(
+                                   "Using ") + mainapp.mediainfoVersion.replace(
+                                   /(\r\n|\n|\r)/gm, "") + qsTr(
+                                   " and ExifTool ") + mainapp.exifToolVersion
                 font.pixelSize: Theme.fontSizeExtraSmall
                 width: parent.width
                 horizontalAlignment: Text.Center
