@@ -4,4 +4,5 @@ X-Nemo-Application-Type=silica-qt5
 Name=mediainfo-gui
 Icon=mediainfo-gui
 Exec=mediainfo-gui
-
+[X-Sailjail]
+Sandboxing=Disabled

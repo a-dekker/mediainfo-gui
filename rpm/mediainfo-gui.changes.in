@@ -8,6 +8,8 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Nov 14 2021 Jack Tar <jack.tar@example.com> 0.0.4-1
+- Opt out of sailjail
 * Tue Aug 04 2018 Jack Tar <jack.tar@example.com> 0.0.3-2
 - Updated Dutch and Swedish
 - Always use exiftool for non-media file info
