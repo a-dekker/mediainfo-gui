@@ -176,32 +176,32 @@
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="145"/>
         <source>Phototime to file timestamp</source>
-        <translation type="unfinished"></translation>
+        <translation>Fototid till filtidsstämpel</translation>
     </message>
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="146"/>
         <source>Setting timestamp</source>
-        <translation type="unfinished"></translation>
+        <translation>Anger tidsstämpel</translation>
     </message>
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="155"/>
         <source>Remove GPS data</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort GPS-data</translation>
     </message>
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="159"/>
         <source>Removing location info</source>
-        <translation type="unfinished"></translation>
+        <translation>Tar bort platsinformation</translation>
     </message>
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="168"/>
         <source>Remove all EXIF metadata</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort all EXIF metadata</translation>
     </message>
     <message>
         <location filename="../qml/pages/MediaInfo.qml" line="169"/>
         <source>Removing all metadata</source>
-        <translation type="unfinished"></translation>
+        <translation>Tar bort all metadata</translation>
     </message>
 </context>
 <context>
