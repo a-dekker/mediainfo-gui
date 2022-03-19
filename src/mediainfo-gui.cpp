@@ -71,6 +71,7 @@ int main(int argc, char *argv[])
     QQuickView *view = SailfishApp::createView(); // I get a white background with this.
     view->setSource(SailfishApp::pathTo("qml/mediainfo-gui.qml")); // So I do this ;)
     view->rootContext()->setContextProperty("version", appversion);
+    view->rootContext()->setContextProperty("buildyear", BUILD_YEAR);
 
     FM *fileAction = new FM();
     view->engine()->rootContext()->setContextProperty("_fm", fileAction);

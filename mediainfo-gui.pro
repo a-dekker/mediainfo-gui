@@ -59,6 +59,8 @@ OTHER_FILES += qml/mediainfo-gui.qml \
     qml/pages/fileman/OpenDialog.qml \
     qml/pages/MediaInfo.qml
 
+DEFINES += BUILD_YEAR=$$system(date '+%Y')
+
 INSTALLS += translations
 
 TRANSLATIONS = translations/mediainfo-gui-nl.ts \
