@@ -75,6 +75,7 @@ Page {
 
     function getFileInfo() {
         if (toolCmd === "exiftool") {
+            toolCmd = toolCmd + " -api geolocation"
             switch (langName.substring(0, 2)) {
             case "nl":
                 // dutch
